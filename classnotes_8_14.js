@@ -45,6 +45,8 @@
   		// be able to delete it
   		// be able to delete a task
 
+// event delegation - attach an event listener to a part of the page that already exists
+// instead of on hte thing we're inserting into the page, so that we an see 
 
 
 
@@ -57,10 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		let listName = document.getElementById("add-list")
 		new List(listName.value)
 
-		const allListsHTML = List.renderAll()
+		const taskFormTemplate = new TaskFOrm().render()
+		const taskForm = document.getElementById(`task-form`)
+		taskForm.innerHTML = taskFormTemplate
+
+		const allLists = List.renderAll()
 		const parentEl = document.getElementById('all-lists')
-		const taskForm = List.renderForm()
-		parentEl.innerHTML = allListsHTML + taskForm
+		allLists.innerHTML = 
 		//Insert this into the DOM
 
 	
